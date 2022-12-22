@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class='row divProduto'>
+
+    <div class="col-lg-4 offset-lg-1 col-md-6 col-sm-12">
+        <img width="100%" src="{{ produto.image.url }}">
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 ">
+
+        <h3><b>{{ produto.nome }}</b></h3>
+
+        <h3 class="textOrange"><b>R$ {{ produto.valor }}</b></h3>
+        <span><b>{{ produto.promocao }}</b></span>
+        <br><br>
+        <p>{{ produto.descricao }}</p>
+        <br>
+        <h5><b>Classificação: </b></h5>
+
+
+        <form action='{% url "addSacola" %}' method='POST'>
+        {% csrf_token %}
+        <div>
+            <p>Tamanho<br>
+
+                &nbsp &nbsp
+                <select name='tamanho'>
+                    {% for t in tamanhos %}
+                        {% if t.grupo == produto.grupoTamanho %}
+                            <option value={{ t.id }} >{{ t.tamanho }}</option>      
+                        {% endif %}
+                    {% endfor %}
+                 </select>
+
+            </p>
+
+            <p>Cor<br>
+                <select name='cor'>
+                    {% for c in cores %}
+                        <option value={{ c.id }}><a>{{ c.cor }}</a></option>         
+                    {% endfor %}
+                </select>
+
+            </p>
+            <input name='produto' type='hidden' value={{ produto.id }}>
+        </div>
+        
+
+
+        <br>
+
+                <button class="btnProduct">Adicionar à Sacola</button>
+        </form>
+        <br><br>
+        <br><br> <br><br>
+    </div>
+
+
+
+
+
+
+
+    <div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12 avaliation">
+        <br><br>
+        <h1><b>Avaliações</b></h1>
+
+        <div class="star">
+            <h1>4.8</h1>
+            <!--
+            <a>
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+            </a>
+            -->
+        </div>
+
+
+
+
+
+
+        <div class='comentar comentarios'>
+         <h5><b>Deixe o seu comentário</b></h5>
+            <form action='' method='POST'>
+                {% csrf_token %}
+
+
+                <input class='inputComentarios' type='text' name='nome' placeholder='Digite seu nome'>
+                <br>
+                <textarea rows="10" class='inputComentarios' name='comentario' placeholder='Digite o seu comentário'></textarea>
+
+   
+                <div class='estrelasDiv'>
+                            <li>
+                                <label for="btn1">
+                                <a type='submit' value="1" name="avaliacao" class='starSvg'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-star-fill " viewBox="0 0 16 16" >
+                                        <path
+                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    </svg>
+                                                    
+                                </a>
+                            </label>
+                            <input style="display:none" type="submit" id="btn1"  name="star" value="1">
+                            </li>
+
+                            <li>
+                                <label for="btn2">
+                                <a type='submit' value="2" name="avaliacao" class='starSvg'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-star-fill " viewBox="0 0 16 16" >
+                                        <path
+                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    </svg>
+                                                    
+                                </a>
+                            </label>
+                            <input style="display:none" type="submit" id="btn2"  name="star" value="2">
+                            </li>
+
+                            <li>
+                                <label for="btn3">
+                                <a type='submit' value="3" name="avaliacao" class='starSvg'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-star-fill " viewBox="0 0 16 16" >
+                                        <path
+                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    </svg>
+                                                    
+                                </a>
+                            </label>
+                            <input style="display:none" type="submit" id="btn3"  name="star" value="3">
+                            </li>
+
+
+                            <li>
+                                <label for="btn4">
+                                <a type='submit' value="4" name="avaliacao" class='starSvg'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-star-fill " viewBox="0 0 16 16" >
+                                        <path
+                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    </svg>
+                                                    
+                                </a>
+                            </label>
+                            <input style="display:none" type="submit" id="btn4"  name="star" value="4">
+                            </li>
+
+                            <li>
+                                <label for="btn5">
+                                <a type='submit' value="5" name="avaliacao" class='starSvg'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-star-fill " viewBox="0 0 16 16" >
+                                        <path
+                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    </svg>
+                                                    
+                                </a>
+                            </label>
+                            <input style="display:none" type="submit" id="btn5"  name="star" value="5">
+                            </li>
+                </div>
+
+
+                            
+
+                            
+              
+
+                <br>
+
+            </form>
+        </div>
+
+
+
+
+
+
+     <div class="comentarios">
+            <h5><b>Comentários</b></h5>
+            <br>
+        {% for a in avaliacoes %}
+
+
+
+            
+            <div class="comentario">
+                <span>{{ a.star }} <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-star-fill" viewBox="0 0 16 16"
+                        width='20' height='20' fill='yellow'>
+                        <path
+                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                    </svg></span>
+
+                <p class="comentarioP"><b>{{ a.nome }}</b></p>
+                <p>{{ a.avaliacao }}</p>
+
+            </div>
+ 
+
+   
+
+        {% endfor %}
+     </div>
+
+
+    </div>
+
+
+    {% endblock %}

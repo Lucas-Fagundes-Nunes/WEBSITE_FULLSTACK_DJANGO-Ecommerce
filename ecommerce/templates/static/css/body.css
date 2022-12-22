@@ -1,0 +1,187 @@
+.divBody
+{
+    position: relative;
+    top: 20px;
+
+    height: 80vh;
+    margin: auto;
+
+
+}
+
+
+
+.divImgPromotion
+{
+    border-radius: 12px;
+    position: relative;
+    margin:10px;
+    box-shadow: 6px 2px 20px rgba(0,0,0,.6);
+    height: 450px;
+}
+
+.divImgPromotion img
+{
+    margin-top: 20px;
+    background-color: black;
+    margin: auto;
+    display: block;
+}
+
+.valorDiv h3
+{
+    color:orange;
+    font-weight:900;
+    text-shadow: 1px 2px 2px black;
+}
+
+.valorDiv
+{
+    margin: 10px auto;
+    padding: 30px;
+}
+
+
+.valorDiv p
+{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100px;
+    overflow-y: scroll;
+    padding: 10px 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.valorDiv p::-webkit-scrollbar-thumb {
+    background-color: orange;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid white;  /* creates padding around scroll thumb */
+  }
+
+.valorDiv p::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+.valorDiv p::-webkit-scrollbar-track {
+    background: white;        /* color of the tracking area */
+}
+
+.btnComprar
+{
+    width: 100%;
+
+    background-color: orange;
+    color: wheat;
+    font-size: 12pt;
+    font-weight: 900;
+    text-decoration: none;
+    cursor:pointer;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 4px 2px 6px black;
+    text-shadow: 2px 2px 6px black;
+    height: 40px;
+}
+
+.titleProduct
+{
+    height: 30px;
+}
+
+.emojiProduct
+{
+    float: right;
+    padding-bottom: 10px;
+    height: 40px;
+}
+
+.emojiProduct svg
+{
+    width: 30px;
+    height: 30px;
+    fill: orange;
+    text-shadow: 4px 2px 4px black;
+}
+
+.emojiProduct a
+{
+    text-shadow: 2px 4px 2px black;
+    padding: 0 6px;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.emojiProduct svg:hover
+{
+    opacity: 0.6;
+}
+
+.divRigth
+{
+    width:500px;
+    background:orange
+}
+
+.envEmail
+{
+    background-color: orange;
+    margin: auto;
+    color:white
+}
+
+.centerEnvEmail, .divInputEnv
+{
+    width:max-content;
+    margin: auto;
+    padding: 15px 0;
+}
+
+.divInputEnv svg
+{
+    width: 30px;
+    height: 30px;
+    fill: white;
+    border-radius: 8px;
+    box-shadow: 2px 4px 6px black;
+    border:none;
+    cursor:pointer
+}
+
+.divInputEnv input
+{
+    border:none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 200px;
+}
+
+.divInputEnv input:active , .divInputEnv input:focus {
+    outline: none !important;
+    border:2px solid white;
+    box-shadow: 0 0 10px white;
+    color: orange;
+}
+
+.textDivHome
+{
+    width: 60%;
+    margin: 60px auto;
+}
+
+.promoEspeciais
+{
+    color:orange;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 2px 4px 4px black;
+}
+
+.user
+{
+    color:black;
+    text-align: center;
+    font-size: 12pt;
+    text-shadow: 1px 1px 1px black;
+    font-weight: 700;
+}

@@ -1,0 +1,84 @@
+{% if user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <a href='/accounts/logout'> LOGOUT </a>
+    <h3> Seja bem-vindo Lucas </h3>
+
+    <div>
+
+        <h3>Adicionar Cor</h3>
+        <form action="{% url 'addCor' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="cor">
+            <button class="btnSalvar">
+                Cadastrar
+            </button>
+        </form>
+
+
+        <h3>Adicionar Tamanho</h3>
+        <form action='{% url "addtamanho" %}' method='POST'>
+            {% csrf_token %}
+            <input type='text' name='tamanho'>
+            <select name='grupo'>
+                <option value='0'>Roupas</option>
+                <option value='1'>Tênis</option>
+            </select>
+
+            <button class="btnSalvar">
+                Cadastrar
+            </button>
+        </form>
+
+        <h3>Adicionar Produto</h3>
+        <form action="{% url 'addProduto' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label>Imagem</label>
+            <input name="image" type="file">
+
+            <label>Nome do Produto</label>
+            <input type="text" name="nome">
+
+            <label>Promoção</label>
+            <input type="text" name="promocao">
+
+            <label>Descrição</label>
+            <textarea type="text" name="descricao"></textarea>
+
+            <label>Especial</label>
+            <input type="checkbox" name="especial">
+
+            <label>Grupo</label>
+            <select name='grupo'>
+                <option value='0'>Roupas</option>
+                <option value='1'>Tênis</option>
+            </select>
+
+            <label>Valor</label>
+            <input type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="valor">
+
+            <label>Estoque</label>
+            <input type="number" name="estoque">
+
+            <label>Valor Anterior</label>
+            <input type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="valoranterior">
+
+            <button class="btnSalvar">
+                Cadastrar
+            </button>
+        </form>
+
+    </div>
+</body>
+
+</html>
+{% endif %}

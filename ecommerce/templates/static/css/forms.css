@@ -1,0 +1,85 @@
+
+body
+{
+    background-image: linear-gradient(to right, rgba(255, 167, 5, 0.7), white);
+}
+
+.divForm
+{
+    border:3px solid orange;
+    border-radius: 8px;
+    width: 400px;
+    margin: 0px auto;
+    padding: 20px;
+}
+
+.divForm h1
+{
+    color: orange;
+    text-align: center;
+    font-weight: 900;
+}
+
+.divForm input
+{
+    padding:10px;
+    width: 80%;
+    margin: 20px 5%;
+    border-radius: 8px;
+    outline: none;
+    border:1px solid white;
+    color:orange;
+    background: transparent;
+}
+
+.divForm label
+{
+    width: 80%;
+    margin: 20px 5%;
+    color:white;
+}
+
+.divForm input::placeholder
+{
+    color:white
+}
+
+
+.divForm input:focus
+{
+    outline: none;
+    border:2px solid orange;
+    background: transparent;
+}
+
+.divForm input:focus::placeholder
+{
+    color:orange
+}
+
+.divForm button
+{
+    border:1px solid orange;
+    background:transparent;
+    color:orange;
+    border-radius: 8px;
+    width: 85%;
+    margin: 0px 5%;
+    padding: 10px;
+    font-weight: 900;
+}
+
+.divForm button:hover
+{
+    border:1px solid white;
+    background:orange;
+    color:white;
+    cursor: pointer;
+}
+
+
+
+/* Cor do texto do autocomplete */
+input:-webkit-autofill {
+    -webkit-text-fill-color: orange !important;
+}

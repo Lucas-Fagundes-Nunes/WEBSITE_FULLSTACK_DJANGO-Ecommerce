@@ -1,0 +1,123 @@
+.divProduto
+{
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 1px 2px 8px black;
+    padding: 60px 0px;
+    background-color: rgba(255,255,255, .2);
+}
+
+.textOrange
+{
+    color:orange;
+    font-weight:900;
+    text-shadow: 2px 4px 4px black;
+}
+
+.divProduto span
+{
+    opacity: 0.8;
+}
+
+.divProduto p, .divProduto h5
+{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btnProduct
+{
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    background:green;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 2px 6px 8px black;
+    text-shadow: 2px 2px 2px black;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.avaliation
+{
+    text-align: center;
+    border-top:3px dashed rgba(0,0,0, .4);
+    margin-bottom: 90px;
+}
+
+
+.star h1, .avaliation h1
+{
+    color:orange;
+    text-shadow: 2px 2px 2px black;
+}
+
+
+.star a svg
+{
+    width: 50px;
+    height: 50px;
+    fill: yellow;
+    filter:drop-shadow(0px 0px 18px yellow);
+}
+
+.comentarios
+{
+    margin-top: 50px;
+    padding: 30px 0px;
+}
+
+.comentarios .comentarioP, .comentarios p
+{
+    text-align: left;
+}
+
+.comentarios h5
+{
+    text-shadow: 2px 2px 4px black;
+}
+
+.comentarios .comentarioP
+{
+    font-size: 14pt
+}
+
+.comentario
+{
+    padding: 10px 20px;
+    box-shadow: 2px 2px 24px rgba(0,0,0, .6);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+
+.starSvg svg
+{
+    width:40px ;
+    height:40px;
+    fill:white;
+    stroke-width: 1px;
+    stroke: yellow;
+}
+
+.starSvg svg:hover
+{
+    fill: yellow;
+}
+
+.estrelasDiv li
+{
+    display: inline-block;
+}
+
+.inputComentarios
+{
+    width: 80%;
+    margin:20px 10%;
+    border-radius: 8px;
+}
+
+.comentar input
+{
+    height: 40px;
+}

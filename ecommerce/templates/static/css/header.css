@@ -1,0 +1,42 @@
+.navBar
+{
+    background: orange;
+    box-shadow: 2px 4px 8px rgba(0,0,0,.3);
+    height: 60px;
+}
+
+.navBar nav li 
+{
+    cursor: pointer;
+    text-decoration: none;
+    color:white;
+}
+
+.navBar nav li
+{
+    display:inline-block;
+    padding:10px 20px;
+    float:right;
+    box-shadow: 4px 6px 6px rgba(0,0,0, .4);
+    border-radius: 7px;
+}
+
+.topDiv
+{
+    height: 10px;
+    background-color: #fff;
+}
+
+.navBar nav li a svg
+{
+    font-weight: bold;
+    fill: white;
+    width: 30px;
+    height: 30px;
+}
+
+
+.navBar nav li a svg:hover
+{
+    fill:rgba(255,255,255,.4);
+}

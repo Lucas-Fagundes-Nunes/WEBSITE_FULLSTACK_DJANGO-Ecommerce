@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/forms.css' %}" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method='POST' >
+    {% csrf_token %}
+    <div class='divForm'>
+    <h1 class='formCadastro'>Cadatro Usuário</h1>
+    <div class='inputDiv'>
+    <input name='nome' type='text' placeholder='Nome'><br>
+    </div>
+    <input name='sobrenome' type='text' placeholder='Sobrenome'><br>
+    <input name='username' type='text' placeholder='Username'><br>
+    <input name='email' type='email' placeholder='E-mail'><br>
+    <input name='senha' type='password' placeholder='Senha'><br>
+    <button>Cadastrar</button>
+    </div>
+    </form>
+</body>
+</html>
